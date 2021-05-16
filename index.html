@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazeez...</title>
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:ital@1&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: wheat;
+        }
+
+        .tab {
+            border: 3px solid rgb(0, 26, 255);
+            margin: 25px 5px;
+            border-radius: 20px;
+            background-image: url(https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-tea-restaurant-menu-background-material-image_159445.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        header {
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-summer-atmosphere-restaurant-supermarket-vegetable-psd-layered-promotion-background-image_159939.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top;
+            border-radius: 20px;
+            border: 3px solid rgb(0, 26, 255);
+            position: sticky;
+            margin: 10px 5px;
+            z-index: 1;
+            top: 0px;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-size: 70px;
+            font-family: Koho, Arial, Helvetica, sans-serif;
+            margin-top: 0px;
+            text-decoration: underline;
+            color: crimson;
+            margin-bottom: 0px;
+        }
+
+        h1:hover {
+            text-align: center;
+            font-family: Koho, Arial, Helvetica, sans-serif;
+            text-decoration: underline;
+            color: rgb(255, 255, 255);
+            cursor: grab;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #logo {
+            margin-top: 17px;
+            float: left;
+            height: 100px;
+            width: 10%;
+            border: 3px solid rgb(0, 26, 255);
+            padding: 0px;
+            border-radius: 100px;
+        }
+
+        li {
+            float: left;
+            list-style: none;
+            margin: 2px 10px;
+        }
+
+        a {
+            color: rgb(255, 255, 255);
+            font-size: x-large;
+            text-decoration: none;
+        }
+
+        ul {
+            overflow: auto;
+            margin: auto;
+            padding: 3px;
+        }
+
+        a:hover {
+            color: red;
+            text-decoration: underline;
+            font-style: italic;
+        }
+
+        nav {
+            position: sticky;
+            margin: auto;
+            width: fit-content;
+            overflow: auto;
+            border: 3px solid rgb(241, 117, 225);
+            border-radius: 40px;
+        }
+
+        .content {
+            display: flex;
+            margin: 5px;
+            border-radius: 20px;
+        }
+
+        .matter {
+            width: 50%;
+        }
+
+        #wel {
+            text-align: center;
+            color: rgb(255, 145, 0);
+            font-weight: bold;
+            font-style: oblique;
+            font-size: 50px;
+            margin: 5px;
+        }
+
+        .heading {
+            font-size: xx-large;
+            text-align: center;
+            font-style: oblique;
+            font-family: Koho;
+            color: tomato;
+        }
+
+        .heading:hover {
+            font-size: xx-large;
+            text-align: center;
+            font-style: oblique;
+            font-family: Koho;
+            color: green;
+            text-decoration: solid;
+            cursor: pointer;
+        }
+
+        #stitle {
+            margin: auto;
+            width: fit-content;
+            padding: 3px;
+            font-size: large;
+            border-left: 2px tomato solid;
+            border-bottom: 2px tomato solid;
+            border-right: 2px tomato solid;
+        }
+
+        #welimg {
+            width: 100%;
+            border: 5px double red;
+            border-radius: 10px;
+        }
+
+        #logo1 {
+            width: 100%;
+            border-radius: 100px;
+        }
+
+        #subtitle {
+            display: block;
+            text-align: center;
+            font-size: 45px;
+            margin: 0px;
+            font-style: italic;
+            font-family: fantasy;
+            text-decoration: dotted;
+            color: olive;
+        }
+
+        .dbox {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .dishes {
+            padding: 5px;
+            border: 3px solid rgb(0, 26, 255);
+            border-radius: 20px;
+            margin: 10px;
+        }
+
+        .dishes img {
+            width: 300px;
+            height: 200px;
+            border-radius: 20px;
+            border: 3px solid red;
+        }
+
+        .dishes img:hover {
+            width: 300px;
+            height: 200px;
+            border-radius: 20px;
+            border: 3px solid red;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        .dh3 {
+            width: fit-content;
+            font-size: large;
+            margin: 15px auto;
+            border-bottom: 2px solid brown;
+        }
+
+        .dhead {
+            width: fit-content;
+            margin: auto;
+        }
+
+        .add {
+            margin: 5px;
+            border-radius: 5px;
+            background-color: rgb(100, 110, 245);
+            text-align: center;
+        }
+
+        .add:hover {
+            margin: 5px;
+            border-radius: 5px;
+            background-color: rgb(100, 110, 245);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .add:focus {
+            border-radius: 5px;
+            background-color: green;
+            text-align: center;
+        }
+
+        .veg {
+            background-color: green;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .nveg {
+            background-color: red;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .cut {
+            text-decoration: line-through;
+        }
+
+        .dis {
+            margin: 5px 30px;
+        }
+
+        #recsearch {
+            display: inline-block;
+            text-align: left;
+            background: none;
+            border: none;
+            width: 500px;
+            height: 25px;
+            margin: 0 10px;
+        }
+
+        #recsearch:hover {
+            display: inline-block;
+            height: 25px;
+            text-align: left;
+            background: none;
+            border: none;
+            width: 500px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        #recsearch:focus {
+            display: inline-block;
+            text-align: left;
+            background: none;
+            border: none;
+            outline: none;
+            width: 500px;
+            height: 25px;
+            margin: 0 10px;
+            cursor: text;
+        }
+
+        .search {
+            display: flex;
+            align-content: space-between;
+            width: fit-content;
+            margin: 10px auto;
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+
+        #slogo {
+            display: inline-blockS;
+            margin: 0px 10px;
+            padding: 1px;
+            width: 25px;
+            height: 25px;
+        }
+
+        p {
+            width: 300px;
+        }
+
+        form {
+            width: fit-content;
+            margin: auto;
+            border: 3px solid rgb(0, 26, 255);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .form {
+            display: inline-block;
+            text-align: left;
+            background: none;
+            border: none;
+            margin: 0 10px;
+            padding: 10px;
+        }
+
+        .form:hover {
+            display: inline-block;
+            text-align: left;
+            background: none;
+            border: none;
+            margin: 0 10px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .form:focus {
+            display: inline-block;
+            text-align: left;
+            background: none;
+            border: none;
+            outline: none;
+            margin: 0 10px;
+            cursor: text;
+            padding: 10px;
+        }
+
+        #rating:focus {
+            cursor: pointer;
+        }
+
+        .submit {
+            border-radius: 10px;
+            border: 2px solid rgb(0, 26, 255);
+            background-color: green;
+            font-size: large;
+            width: 100%;
+            padding: 5px 5px;
+        }
+
+        .submit:focus {
+            border-radius: 10px;
+            border: 2px solid rgb(0, 26, 255);
+            background-color: rgb(253, 0, 0);
+            font-size: large;
+            width: 100%;
+            padding: 5px 5px;
+        }
+
+        .submit:hover {
+            border-radius: 10px;
+            border: 2px solid rgb(0, 26, 255);
+            background-color: rgb(253, 0, 0);
+            font-size: large;
+            width: 100%;
+            padding: 5px 5px;
+            cursor: pointer;
+        }
+
+        label {
+            padding: 10px;
+        }
+
+        .clogo {
+            border: 2px solid red;
+            border-radius: 10px;
+            width: 100%;
+            height: 80%;
+        }
+
+        .clogo:hover {
+            border: 5px solid rgb(0, 26, 255);
+            border-radius: 10px;
+            width: 100%;
+            height: 80%;
+            opacity: 0.6;
+        }
+
+        .conus {
+            width: 5%;
+            margin: 10px;
+        }
+
+        #up {
+            width: 5%;
+            border-radius: 50px;
+            float: right;
+            position: sticky;
+            bottom: 5px;
+        }
+
+        #up:hover {
+            width: 5%;
+            border-radius: 50px;
+            float: right;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ---------------------------------------------------------------- -->
+
+    <header>
+        <h1>
+            <img id="logo"
+                src="https://dcassetcdn.com/design_img/2348323/610880/610880_12297710_2348323_7b9c2c93_image.png"
+                alt="Logo">
+            Lazeez
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#intro">Home</a>
+                </li>
+                <li>
+                    <a href="#spl">Specialities</a>
+                </li>
+                <li>
+                    <a href="#rec">Our Recommendation</a>
+                </li>
+                <li>
+                    <a href="#rev">Review</a>
+                </li>
+                <li>
+                    <a href="#con">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ---------------------------------------------------------------- -->
+
+    <div class="tab" id="intro">
+        <h2 class="heading">
+            Introduction
+        </h2>
+        <div class="content">
+            <div class="matter" id="item-1">
+                <h2 id="wel">Welcome</h2>
+                <img id="welimg"
+                    src="https://images.all-free-download.com/images/graphicthumb/restaurant_menu_cover_template_male_cook_cartoon_character_6835936.jpg"
+                    alt="wish">
+            </div>
+            <div class="matter" id="item-2">
+                <h2>
+                    <img id="logo1"
+                        src="https://dcassetcdn.com/design_img/2348323/610880/610880_12297710_2348323_7b9c2c93_image.png"
+                        alt="Logo">
+                </h2>
+                <sub id="subtitle">Quality you can taste</sub>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------- -->
+
+    <div class="tab" id="spl">
+        <h2 class="heading">
+            Specialities
+        </h2>
+        <p id="stitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, beatae.</p>
+
+        <h3 class="dh3">Exclusive Dishes :</h3>
+        <div class="dbox">
+            <div class="dishes">
+                <img src="https://curlytales.com/wp-content/uploads/2020/07/Biryani-1-1024x576.jpg" alt="Dish">
+                <h3 class="dhead">
+                    Biryani
+                    <span class="nveg">&nbsp&nbsp&nbsp&nbsp</span>
+                </h3>
+                <h3>
+                    <button class="add">
+                        Add this
+                    </button>
+                    <span class="dis">
+                        40% off
+                    </span>
+                    <span>
+                        Rs
+                    </span>
+                    <span class="cut">
+                        500
+                    </span>
+                    <span>
+                        300
+                    </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://thebellyrulesthemind.net/wp-content/uploads/2019/12/Air-Fryer-Tandoori-Paneer-Tikka-7-720x405.png"
+                    alt="Paneer">
+                <h3 class="dhead">
+                    Paneer
+                    <span class="veg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+                <h3>
+                    <button class="add">
+                        Add this
+                    </button>
+                    <span class="dis">
+                        40% off
+                    </span>
+                    <span>
+                        Rs
+                    </span>
+                    <span class="cut">
+                        500
+                    </span>
+                    <span>
+                        300
+                    </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://www.recipetineats.com/wp-content/uploads/2020/02/Honey-Garlic-Chicken-Breast_5-SQ.jpg"
+                    alt="Chicken">
+                <h3 class="dhead">
+                    Chicken
+                    <span class="nveg"> &nbsp&nbsp&nbsp&nbsp</span>
+                </h3>
+                <h3>
+                    <button class="add">
+                        Add this
+                    </button>
+                    <span class="dis">
+                        40% off
+                    </span>
+                    <span>
+                        Rs
+                    </span>
+                    <span class="cut">
+                        500
+                    </span>
+                    <span>
+                        300
+                    </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://static.onecms.io/wp-content/uploads/sites/9/2020/01/201308-ft-tomato-soup-with-chickpeas-and-pasta-2000.jpg"
+                    alt="Soup">
+                <h3 class="dhead">
+                    Soup
+                    <span class="veg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+                <h3>
+                    <button class="add">
+                        Add this
+                    </button>
+                    <span class="dis">
+                        40% off
+                    </span>
+                    <span>
+                        Rs
+                    </span>
+                    <span class="cut">
+                        500
+                    </span>
+                    <span>
+                        300
+                    </span>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------- -->
+
+    <div class="tab" id="rec">
+        <h2 class="heading">
+            Our Recommendation
+        </h2>
+        <p id="stitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, beatae.</p>
+        <div class="search">
+            <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png" alt="Search" id="slogo">
+            <input type="text" id="recsearch" placeholder="Search">
+        </div>
+        <h3 class="dh3">Lazeez Dishes :</h3>
+        <div class="dbox">
+            <div class="dishes">
+                <img src="https://curlytales.com/wp-content/uploads/2020/07/Biryani-1-1024x576.jpg" alt="Dish">
+                <h3 class="dhead">
+                    Biryani
+                    <span class="nveg">&nbsp&nbsp&nbsp&nbsp</span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://thebellyrulesthemind.net/wp-content/uploads/2019/12/Air-Fryer-Tandoori-Paneer-Tikka-7-720x405.png"
+                    alt="Paneer">
+                <h3 class="dhead">
+                    Paneer
+                    <span class="veg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://www.recipetineats.com/wp-content/uploads/2020/02/Honey-Garlic-Chicken-Breast_5-SQ.jpg"
+                    alt="Chicken">
+                <h3 class="dhead">
+                    Chicken
+                    <span class="nveg"> &nbsp&nbsp&nbsp&nbsp</span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://static.onecms.io/wp-content/uploads/sites/9/2020/01/201308-ft-tomato-soup-with-chickpeas-and-pasta-2000.jpg"
+                    alt="Soup">
+                <h3 class="dhead">
+                    Soup
+                    <span class="veg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://b.zmtcdn.com/data/pictures/9/19115979/82fd4ca0508af826c6b710914ca77bbd.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*"
+                    alt="Soup">
+                <h3 class="dhead">
+                    Noodles
+                    <span class="veg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://im1.dineout.co.in/images/uploads/restaurant/sharpen/3/h/j/p3648-15815066845e43e07ced604.jpg?tr=tr:n-large"
+                    alt="Soup">
+                <h3 class="dhead">
+                    Burger
+                    <span class="nveg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://www.whiskaffair.com/wp-content/uploads/2019/04/Oreo-Milkshake-1-3.jpg" alt="Soup">
+                <h3 class="dhead">
+                    Milkshake
+                    <span class="veg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img src="https://cdn.britannica.com/08/177308-050-94D9D6BE/Food-Pizza-Basil-Tomato.jpg" alt="Soup">
+                <h3 class="dhead">
+                    Pizza
+                    <span class="veg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+            </div>
+            <div class="dishes">
+                <img
+                    src="https://1.bp.blogspot.com/-wUNxg_8CAbc/WD-RxkK1ztI/AAAAAAAAB08/vYrWEUWA6y09G7HasiMJv4c4mOTqEJJqgCLcB/s1600/Chicken%2BLollipop%2BRecipe.JPG">
+                <h3 class="dhead">
+                    Chicken Lollipop
+                    <span class="nveg">&nbsp&nbsp&nbsp&nbsp </span>
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------- -->
+
+    <div class="tab" id="rev">
+        <h2 class="heading">
+            Reviews
+        </h2>
+        <div class="dbox">
+            <div class="dishes">
+                <img src="https://vz.cnwimg.com/thumb-1200x/wp-content/uploads/2010/04/Hrithik-Roshan.jpg" alt="rh">
+                <h3 class="dhead">
+                    Akshat Mehta
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, culpa. Illum maxime suscipit ea
+                    assumenda maiores beatae harum provident odio sequi placeat, eum consequatur perspiciatis nesciunt
+                    adipisci eligendi? Reprehenderit, vitae! Harum exercitationem eos est error nostrum quis tenetur,
+                    perspiciatis possimus? Iure molestiae neque voluptas aspernatur?
+                </p>
+            </div>
+            <div class="dishes">
+                <img src="https://cricfit.com/wp-content/uploads/2017/10/deepika-padukone-1584060823.jpg">
+                <h3 class="dhead">
+                    Kriti Jain
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, amet. Explicabo facilis laudantium
+                    cupiditate quam, corporis alias velit aliquam eaque repudiandae iusto expedita suscipit, porro omnis
+                    accusantium veniam, similique cum?
+                </p>
+            </div>
+            <div class="dishes">
+                <img src="https://static.toiimg.com/thumb/8221315.cms?width=170&height=240">
+                <h3 class="dhead">
+                    Ram Kumar
+                </h3>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque excepturi illum, ea voluptatum
+                    suscipit
+                    possimus error sint cumque aperiam eius eaque quod tenetur, perspiciatis iste sed magni quasi
+                    officiis
+                    sit ratione architecto dolorem. Odit alias maxime qui cumque doloribus ab iure adipisci dolorum
+                    provident cum, amet architecto modi maiores nam?
+                </p>
+            </div>
+        </div>
+        <h3 class="dh3">Give your Review :</h3>
+        <form action="noation">
+            <div class="search">
+                <label for="name">Name :</label>
+                <input type="text" placeholder="Name" class="form">
+            </div>
+            <div class="search">
+                <label for="email">Email :</label>
+                <input type="email" placeholder="Email address" class="form">
+            </div>
+            <div class="search">
+                <label for="fav">Favorutie Dish :</label>
+                <input type="text" placeholder="Dish" class="form">
+            </div>
+            <div class="search">
+                <label for="rating">Rating :</label>
+                <input type="range" class="form" id="rating">
+            </div>
+            <div class="search">
+                <label for="review">Review :</label>
+                <input type="text" placeholder="Review" class="form">
+            </div>
+            <button class="submit" type="button">
+                Submit
+            </button>
+        </form>
+    </div>
+
+    <!-- ---------------------------------------------------------------- -->
+
+    <div class="tab" id="con">
+        <h2 class="heading">Contact Us</h2>
+        <div class="dbox">
+            <a class="conus" href="https://www.youtube.com/" target="_blank">
+                <img class="clogo"
+                    src="https://w7.pngwing.com/pngs/936/468/png-transparent-youtube-logo-youtube-logo-computer-icons-subscribe-angle-rectangle-airplane.png"
+                    alt="Yt">
+            </a>
+            <a class="conus" href="https://twitter.com/" target="_blank">
+                <img class="clogo"
+                    src="https://static01.nyt.com/images/2014/08/10/magazine/10wmt/10wmt-superJumbo-v4.jpg" alt="Yt">
+            </a>
+            <a class="conus" href="https://www.facebook.com/" target="_blank">
+                <img class="clogo"
+                    src="https://cdn3.iconfinder.com/data/icons/facebook-ui-flat/48/Facebook_UI-03-512.png" alt="Yt">
+            </a>
+            <a class="conus" href="https://mail.google.com" target="_blank">
+                <img class="clogo" src="https://www.typeroom.eu/assets/original/2020/10/09/gmail_new_logo_typeroom.jpg"
+                    alt="Yt">
+            </a>
+            <a class="conus" href="https://www.instagram.com/" target="_blank">
+                <img class="clogo" src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png" alt="Yt">
+            </a>
+        </div>
+        <a href="#intro">
+            <img id="up" src="https://www.vhv.rs/dpng/d/473-4733473_a-round-yellow-disc-with-embedded-up-arrow.png"
+                alt="up">
+        </a>
+    </div>
+
+    <!-- ---------------------------------------------------------------- -->
+
+</body>
+
+</html>
